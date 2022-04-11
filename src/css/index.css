@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+.dialog{
+    width: 510px;
+    height: 610px;
+}
+
+.xD {
+  
+    background-color: rgb(252, 252, 252);
+}
+
+.mainTitle {
+    font-family: 'Shadows Into Light',
+        cursive;
+    font-size: 40px;
+    padding: .7em 40%;
+}
+
+.detailsBoxPosition {
+    position: relative;
+    top: 75px;
+}
+.detailsTitle {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-family: 'Quicksand',
+    sans-serif;
+    font-weight: 500;
+  
+}
+
+.cursor{
+    cursor: pointer;
+   
+}
+
+.deleteMargin {
+    margin-left: 5px;
+}
+
+.detailsDescription {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Quicksand',
+    sans-serif;
+}
+
+.detailsDate {
+    border-top: 1px solid black;
+    font-family: 'Quicksand';
+    font-weight: 500;
+}
+
+.span {
+    float: right;
+}
+
+
+.beforeListP {
+    margin-bottom: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .mainTitle {
+        font-size: 35px;
+    }
+
+    .s {
+        transform: scale(0.8);
+    }
+}
