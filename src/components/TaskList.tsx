@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 interface taskListProps
 {
     active: number,
@@ -14,10 +14,11 @@ interface taskListProps
 
 const TaskList = ({ active, setActive, todo }: taskListProps): JSX.Element =>
 {
+    let navigate = useNavigate();
     const listItems: JSX.Element[] =
         todo.map((item) =>
         {
-            return (<li onClick={() => setActive(item.id)} className={`list-group-item xD cursor ${active === item.id ? 'active' : null}`}>{item.task}<span className="span"> {item.done}%</span></li>)
+            return (<li onClick={() => { setActive(item.id); navigate(`${item.id}`) }} className={`list-group-item xD cursor ${active === item.id ? 'active' : null}`}>{item.task}<span className="span"> {item.done}%</span></li>)
         })
 
     return (

@@ -6,6 +6,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import '../css/bootstrap.min.css'
 import '../css/index.css'
 import AddTask from './AddTask'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 const TodoList = [
     {
@@ -31,26 +32,31 @@ const App = (): JSX.Element =>
     let [openEdit, setOpenEdit] = useState(false);
 
     return (
-        <div className="container ">
-            <div className="row">
+        <BrowserRouter>
+            <div className="container ">
+                <div className="row">
 
-                <h3 className="mainTitle">
-                    TODO APP <span><AddCircleOutlineIcon onClick={() => setOpen(true)} className="cursor s"></AddCircleOutlineIcon></span>
-                </h3>
-                <br></br>
+                    <h3 className="mainTitle">
+                        TODO APP <span><AddCircleOutlineIcon onClick={() => setOpen(true)} className="cursor s"></AddCircleOutlineIcon></span>
+                    </h3>
+                    <br></br>
 
-                <AddTask open={open} setOpen={setOpen} todo={todo} />
-                {openEdit === true ? <EditTask setTodo={setTodo} active={active} todo={todo} openEdit={openEdit} setOpenEdit={setOpenEdit} /> : null}
+                    <AddTask open={open} setOpen={setOpen} todo={todo} />
+                    {openEdit === true ? <EditTask setTodo={setTodo} active={active} todo={todo} openEdit={openEdit} setOpenEdit={setOpenEdit} /> : null}
+                    <TaskList setActive={setActive} active={active} todo={todo} />
+                    <div className="col-lg-1">
+                    </div>
+                    <Routes>
 
-                <TaskList setActive={setActive} active={active} todo={todo} />
+                        <Route path='/:title' element={<Details openEdit={openEdit} setOpenEdit={setOpenEdit} setActive={setActive} setTodo={setTodo} todo={todo} active={active} />} />
+                    </Routes>
 
-                <div className="col-lg-1">
+
+
+
                 </div>
-
-                {active > 0 ? <Details openEdit={openEdit} setOpenEdit={setOpenEdit} setActive={setActive} setTodo={setTodo} todo={todo} active={active} /> : null}
-
             </div>
-        </div>
+        </BrowserRouter>
     )
 }
 

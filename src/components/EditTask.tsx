@@ -47,7 +47,7 @@ const EditTask = (props: EditTaskProps): JSX.Element =>
     return (
         <div>
             <Dialog disablePortal open={props.openEdit} onClose={() => props.setOpenEdit(false)}>
-                <DialogTitle>Add new task</DialogTitle>
+                <DialogTitle>Edit task</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         Please fill up the fields if you want to add new task.

@@ -1,6 +1,7 @@
 import React from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom'
 
 interface propsInterface
 {
@@ -25,10 +26,12 @@ interface propsInterface
 
 const Details = (props: propsInterface): JSX.Element =>
 {
+    const navigate = useNavigate();
     const deleteTask = () =>
     {
         props.setTodo(props.todo.filter((item) => item.id !== props.active))
         props.setActive(0);
+        navigate('/')
     }
 
     const renderTask = () =>
